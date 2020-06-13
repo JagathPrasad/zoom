@@ -23,7 +23,7 @@ export class ZoomComponent {
 
     //     this.meetConfig = {
     //         apiKey: '',
-    //         apiSecret: '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb',
+    //         apiSecret: '',
     //         meetingNumber: meetingNumber,
     //         userName: 'Jagath',
     //         passWord: '',
@@ -96,7 +96,7 @@ export class ZoomComponent {
     public signature: any;
     meetConfig = {
         apiKey: '',
-        apiSecret: '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb',
+        apiSecret: '',
         meetingNumber: 2829261127,
         userName: 'Jagath',
         passWord: '',
@@ -122,7 +122,7 @@ export class ZoomComponent {
         //this.signature = this.GenerateSignature(this.meetConfig.apiKey, this.meetConfig.apiSecret, meetingNumber, role);
         console.log('nginit');
         
-        this.GenerateSignature('', '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb', '2829261127', '0');
+        this.GenerateSignature('', '', '2829261127', '0');
         //this.ZoomCall();
         // ZoomMtg.init({
         //     leaveUrl: 'http://localhost:4200',
