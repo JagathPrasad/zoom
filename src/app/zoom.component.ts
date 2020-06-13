@@ -22,8 +22,8 @@ export class ZoomComponent {
     // SetConfig(meetingNumber: any) {
 
     //     this.meetConfig = {
-    //         apiKey: 'YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d',
-    //         apiSecret: 'wmrSaqnf9ARaBKh4lYPOSBIDL6WU0NFwjO2f',
+    //         apiKey: '',
+    //         apiSecret: '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb',
     //         meetingNumber: meetingNumber,
     //         userName: 'Jagath',
     //         passWord: '',
@@ -95,8 +95,8 @@ export class ZoomComponent {
 
     public signature: any;
     meetConfig = {
-        apiKey: 'YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d',
-        apiSecret: 'wmrSaqnf9ARaBKh4lYPOSBIDL6WU0NFwjO2f',
+        apiKey: '',
+        apiSecret: '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb',
         meetingNumber: 2829261127,
         userName: 'Jagath',
         passWord: '',
@@ -121,8 +121,8 @@ export class ZoomComponent {
         debugger;
         //this.signature = this.GenerateSignature(this.meetConfig.apiKey, this.meetConfig.apiSecret, meetingNumber, role);
         console.log('nginit');
-        //this.GenerateSignature('2yzPz2hSSBed5goA3GkEdw', '85oJnK0XphXN3NjJ9rDVf8IUCfgO2inuHjTC', '99449287319', '0');
-        this.GenerateSignature('YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d', 'wmrSaqnf9ARaBKh4lYPOSBIDL6WU0NFwjO2f', '2829261127', '0');
+        
+        this.GenerateSignature('', '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb', '2829261127', '0');
         //this.ZoomCall();
         // ZoomMtg.init({
         //     leaveUrl: 'http://localhost:4200',
