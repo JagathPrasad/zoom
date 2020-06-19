@@ -22,8 +22,8 @@ export class ZoomComponent {
     // SetConfig(meetingNumber: any) {
 
     //     this.meetConfig = {
-    //         apiKey: '',
-    //         apiSecret: '',
+    //         apiKey: 'YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d',
+    //         apiSecret: 'wmrSaqnf9ARaBKh4lYPOSBIDL6WU0NFwjO2f',
     //         meetingNumber: meetingNumber,
     //         userName: 'Jagath',
     //         passWord: '',
@@ -95,9 +95,9 @@ export class ZoomComponent {
 
     public signature: any;
     meetConfig = {
-        apiKey: '',
-        apiSecret: '',
-        meetingNumber: 2829261127,
+        apiKey: 'YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d',
+        apiSecret: '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb',
+        meetingNumber: 94347744995,
         userName: 'Jagath',
         passWord: '',
         leaveUrl: "http://localhost:4200",
@@ -116,40 +116,56 @@ export class ZoomComponent {
 
 
     ngOnInit() {
-        //var meetingNumber = this.meetConfig.meetingNumber.toString();
-        //var role = this.meetConfig.role.toString();
+
         debugger;
-        //this.signature = this.GenerateSignature(this.meetConfig.apiKey, this.meetConfig.apiSecret, meetingNumber, role);
+
         console.log('nginit');
-        
-        this.GenerateSignature('', '', '2829261127', '0');
-        //this.ZoomCall();
-        // ZoomMtg.init({
-        //     leaveUrl: 'http://localhost:4200',
-        //     isSupportAV: true,
-        //     success: (res) => {
-        //         ZoomMtg.join({
-        //             meetingNumber: this.meetConfig.meetingNumber,
-        //             userName: this.meetConfig.userName,
-        //             signature: this.signature,
-        //             apiKey: this.meetConfig.apiKey,
-        //             userEmail: 'jagathprasad0@gmail.com',//'',
-        //             passWord: this.meetConfig.passWord,//'',
-        //             success: (res) => {
-        //                 console.log('join meeting success');
-        //             },
-        //             error: (res) => {
-        //                 console.log(res);
-        //                 console.log('this.signature', this.signature);
-        //             }
-        //         });
-        //     },
-        //     error: (res) => {
-        //         console.log('error in zoom');
-        //         console.log(res);
-        //         console.log('this.signature', this.signature);
-        //     }
-        // });
+
+        //Type 1
+        //this.GenerateSignature('YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d', '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb', '94347744995', '0');
+        //error attached in the repository.
+
+        //Type 2
+        ZoomMtg.generateSignature({
+            meetingNumber: this.meetConfig.meetingNumber,
+            apiKey: this.meetConfig.apiKey,
+            apiSecret: this.meetConfig.apiSecret,
+            role: this.meetConfig.role,
+            success: function (res) {
+                console.log(res.result);
+                this.signature = res.result;
+                //let m = this.meetConfig.meetingNumber;
+                let sig = res.result;
+                ZoomMtg.init({
+                    leaveUrl: 'http://localhost:4200',
+                    isSupportAV: true,
+                    success: (res) => {
+                        ZoomMtg.join({
+                            meetingNumber: 94347744995,
+                            userName: 'Jagath',
+                            signature: sig,
+                            apiKey: 'YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d',
+                            userEmail: 'preeline01@gmail.com',//'',
+                            passWord: '',
+                            success: (res) => {
+                                console.log('join meeting success');
+                            },
+                            error: (res) => {
+                                console.log(res);
+                                console.log('this.signature', this.signature);
+                            }
+                        });
+                    },
+                    error: (res) => {
+                        console.log('error in zoom');
+                        console.log(res);
+                        console.log('this.signature', this.signature);
+                    }
+                });
+            }
+        });
+
+
     }
 
     public GenerateSignature(apiKey: string, apiSecret: string, meetingNumber: string, role: string) {

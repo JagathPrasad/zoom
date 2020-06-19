@@ -16,7 +16,7 @@ export class MeetingService {
     }
 
     public GetGenerateToken(apiKey: string, apiSecret: string, meetingNumber: string, role: string): Observable<any> {
-        return this.http.get<any>('http://localhost:58537/api/site/getgeneratetoken/' + apiKey + '/' + apiSecret + '/' + meetingNumber + '/' + role);
+        return this.http.get<any>('http://localhost:52114/api/site/getgeneratetoken/' + apiKey + '/' + apiSecret + '/' + meetingNumber + '/' + role);
     }
 
 }
