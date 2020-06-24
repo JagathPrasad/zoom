@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { MeetingService } from './app.service';
-declare var ZoomMtg;
-
-ZoomMtg.setZoomJSLib("https://source.zoom.us/1.6.1/lib", "/av")
+//declare var ZoomMtg;
+import {ZoomMtg} from '@zoomus/websdk'
+//ZoomMtg.setZoomJSLib("https://source.zoom.us/1.6.1/lib", "/av")
 ZoomMtg.preLoadWasm();
 ZoomMtg.prepareJssdk();
 
@@ -97,7 +97,7 @@ export class ZoomComponent {
     meetConfig = {
         apiKey: 'YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d',
         apiSecret: '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb',
-        meetingNumber: 94347744995,
+        meetingNumber: 123456789,
         userName: 'Jagath',
         passWord: '',
         leaveUrl: "http://localhost:4200",
@@ -122,10 +122,10 @@ export class ZoomComponent {
         console.log('nginit');
 
         //Type 1
-        //this.GenerateSignature('YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d', '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb', '94347744995', '0');
+        //this.GenerateSignature('YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d', '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb', '2829261127', '0');
         //error attached in the repository.
 
-        //Type 2
+       // Type 2
         ZoomMtg.generateSignature({
             meetingNumber: this.meetConfig.meetingNumber,
             apiKey: this.meetConfig.apiKey,
@@ -141,18 +141,18 @@ export class ZoomComponent {
                     isSupportAV: true,
                     success: (res) => {
                         ZoomMtg.join({
-                            meetingNumber: 94347744995,
+                            meetingNumber: 123456789,
                             userName: 'Jagath',
                             signature: sig,
                             apiKey: 'YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d',
-                            userEmail: 'preeline01@gmail.com',//'',
+                            userEmail: '',//'',
                             passWord: '',
                             success: (res) => {
                                 console.log('join meeting success');
                             },
                             error: (res) => {
-                                console.log(res);
-                                console.log('this.signature', this.signature);
+                                console.log('error',res);
+                                console.log('this.signature', sig);
                             }
                         });
                     },
@@ -189,7 +189,7 @@ export class ZoomComponent {
                             console.log('join meeting success');
                         },
                         error: (res) => {
-                            console.log(res);
+                            console.log('error',res);
                             console.log('this.signature', this.signature);
                         }
                     });
