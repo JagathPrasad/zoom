@@ -95,9 +95,9 @@ export class ZoomComponent {
 
     public signature: any;
     meetConfig = {
-        apiKey: 'YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d',
-        apiSecret: '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb',
-        meetingNumber: 123456789,
+        apiKey: '2yzPz2hSSBed5goA3GkEdw',
+        apiSecret: '85oJnK0XphXN3NjJ9rDVf8IUCfgO2inuHjTC',
+        meetingNumber: 2829261127,
         userName: 'Jagath',
         passWord: '',
         leaveUrl: "http://localhost:4200",
@@ -141,10 +141,10 @@ export class ZoomComponent {
                     isSupportAV: true,
                     success: (res) => {
                         ZoomMtg.join({
-                            meetingNumber: 123456789,
+                            meetingNumber: 2829261127,
                             userName: 'Jagath',
                             signature: sig,
-                            apiKey: 'YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d',
+                            apiKey: '2yzPz2hSSBed5goA3GkEdw',
                             userEmail: '',//'',
                             passWord: '',
                             success: (res) => {
