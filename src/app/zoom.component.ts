@@ -100,7 +100,7 @@ export class ZoomComponent {
         meetingNumber: 2829261127,
         userName: 'Jagath',
         passWord: '',
-        leaveUrl: "http://localhost:4200",
+        leaveUrl: "https://www.youtube.com/",
         role: 0
     };
 
@@ -117,7 +117,7 @@ export class ZoomComponent {
 
     ngOnInit() {
 
-        debugger;
+        
 
         console.log('nginit');
 
@@ -137,9 +137,10 @@ export class ZoomComponent {
                 //let m = this.meetConfig.meetingNumber;
                 let sig = res.result;
                 ZoomMtg.init({
-                    leaveUrl: 'http://localhost:4200',
+                    leaveUrl: 'https://www.youtube.com/',
                     isSupportAV: true,
                     success: (res) => {
+                        console.log('1');
                         ZoomMtg.join({
                             meetingNumber: 2829261127,
                             userName: 'Jagath',
@@ -149,10 +150,12 @@ export class ZoomComponent {
                             passWord: '',
                             success: (res) => {
                                 console.log('join meeting success');
+                                console.log('2');
                             },
                             error: (res) => {
                                 console.log('error',res);
                                 console.log('this.signature', sig);
+                                console.log('3');
                             }
                         });
                     },
@@ -160,6 +163,7 @@ export class ZoomComponent {
                         console.log('error in zoom');
                         console.log(res);
                         console.log('this.signature', this.signature);
+                        console.log('4');
                     }
                 });
             }
