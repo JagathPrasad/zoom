@@ -100,7 +100,7 @@ export class ZoomComponent {
         meetingNumber: 2829261127,
         userName: 'Jagath',
         passWord: '',
-        leaveUrl: "https://www.youtube.com/",
+        leaveUrl: "http://localhost:4200/",
         role: 0
     };
 
@@ -137,7 +137,7 @@ export class ZoomComponent {
                 //let m = this.meetConfig.meetingNumber;
                 let sig = res.result;
                 ZoomMtg.init({
-                    leaveUrl: 'https://www.youtube.com/',
+                    leaveUrl: 'http://localhost:4200/',
                     isSupportAV: true,
                     success: (res) => {
                         console.log('1');
