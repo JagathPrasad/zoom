@@ -3,6 +3,10 @@ import { MeetingService } from './app.service';
 //declare var ZoomMtg;
 import {ZoomMtg} from '@zoomus/websdk'
 //ZoomMtg.setZoomJSLib("https://source.zoom.us/1.6.1/lib", "/av")
+//ZoomMtg.setZoomJSLib('https://source.zoom.us/1.7.9/lib', '/av');
+
+//console.log(JSON.stringify(ZoomMtg.checkSystemRequirements()));
+//ZoomMtg.setZoomJSLib("https://source.zoom.us/1.7.9/lib", "/av");
 ZoomMtg.preLoadWasm();
 ZoomMtg.prepareJssdk();
 
@@ -12,7 +16,13 @@ ZoomMtg.prepareJssdk();
 })
 export class ZoomComponent {
 
-
+    // componentWillMount() {
+    //     setTimeout(() => {
+    //       ZoomMtg.preLoadWasm();
+    //       ZoomMtg.prepareJssdk();
+    //       console.log(JSON.stringify(ZoomMtg.checkSystemRequirements()));
+    //     }, 6000);
+    //   }
 
     constructor(private service: MeetingService) {
         //this.SetConfig(98490046909);
@@ -100,7 +110,7 @@ export class ZoomComponent {
         meetingNumber: 2829261127,
         userName: 'Jagath',
         passWord: '',
-        leaveUrl: "http://localhost:4200/",
+        leaveUrl: "http://zoom.us/",
         role: 0
     };
 
@@ -120,7 +130,7 @@ export class ZoomComponent {
         
 
         console.log('nginit');
-
+        
         //Type 1
         //this.GenerateSignature('YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d', '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb', '2829261127', '0');
         //error attached in the repository.
@@ -134,20 +144,20 @@ export class ZoomComponent {
             success: function (res) {
                 console.log(res.result);
                 this.signature = res.result;
-                //let m = this.meetConfig.meetingNumber;
+                let m = 2829261127;
                 let sig = res.result;
                 ZoomMtg.init({
-                    leaveUrl: 'http://localhost:4200/',
+                    leaveUrl: 'http://www.zoom.us',
                     isSupportAV: true,
                     success: (res) => {
                         console.log('1');
                         ZoomMtg.join({
-                            meetingNumber: 2829261127,
+                            meetingNumber: m,
                             userName: 'Jagath',
                             signature: sig,
                             apiKey: '2yzPz2hSSBed5goA3GkEdw',
                             userEmail: '',//'',
-                            passWord: '',
+                            passWord: '5Tja74',
                             success: (res) => {
                                 console.log('join meeting success');
                                 console.log('2');
