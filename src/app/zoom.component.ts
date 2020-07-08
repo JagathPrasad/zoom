@@ -32,8 +32,8 @@ export class ZoomComponent {
     // SetConfig(meetingNumber: any) {
 
     //     this.meetConfig = {
-    //         apiKey: 'YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d',
-    //         apiSecret: 'wmrSaqnf9ARaBKh4lYPOSBIDL6WU0NFwjO2f',
+    //         apiKey: '',
+    //         apiSecret: '',
     //         meetingNumber: meetingNumber,
     //         userName: 'Jagath',
     //         passWord: '',
@@ -105,8 +105,8 @@ export class ZoomComponent {
 
     public signature: any;
     meetConfig = {
-        apiKey: '2yzPz2hSSBed5goA3GkEdw',
-        apiSecret: '85oJnK0XphXN3NjJ9rDVf8IUCfgO2inuHjTC',
+        apiKey: '',
+        apiSecret: '',
         meetingNumber: 2829261127,
         userName: 'Jagath',
         passWord: '',
@@ -132,7 +132,7 @@ export class ZoomComponent {
         console.log('nginit');
         
         //Type 1
-        //this.GenerateSignature('YrCQqImHylkgMVmMRGhbHMSHAN9z0C0p9U4d', '19GaJUFF41rd9SX5m5Um0jPfJ8NYMxn0a1Sb', '2829261127', '0');
+        //this.GenerateSignature('', '', '2829261127', '0');
         //error attached in the repository.
 
        // Type 2
@@ -155,7 +155,7 @@ export class ZoomComponent {
                             meetingNumber: m,
                             userName: 'Jagath',
                             signature: sig,
-                            apiKey: '2yzPz2hSSBed5goA3GkEdw',
+                            apiKey: '',
                             userEmail: '',//'',
                             passWord: '5Tja74',
                             success: (res) => {
